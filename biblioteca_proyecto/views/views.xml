@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="biblioteca_proyecto.list">
+      <field name="name">biblioteca_proyecto list</field>
+      <field name="model">biblioteca_proyecto.biblioteca_proyecto</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="biblioteca_proyecto.action_window">
+      <field name="name">biblioteca_proyecto window</field>
+      <field name="res_model">biblioteca_proyecto.biblioteca_proyecto</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="biblioteca_proyecto.action_server">
+      <field name="name">biblioteca_proyecto server</field>
+      <field name="model_id" ref="model_biblioteca_proyecto_biblioteca_proyecto"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="biblioteca_proyecto" id="biblioteca_proyecto.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="biblioteca_proyecto.menu_1" parent="biblioteca_proyecto.menu_root"/>
+    <menuitem name="Menu 2" id="biblioteca_proyecto.menu_2" parent="biblioteca_proyecto.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="biblioteca_proyecto.menu_1_list" parent="biblioteca_proyecto.menu_1"
+              action="biblioteca_proyecto.action_window"/>
+    <menuitem name="Server to list" id="biblioteca_proyecto" parent="biblioteca_proyecto.menu_2"
+              action="biblioteca_proyecto.action_server"/>
+-->
+  </data>
+</odoo>

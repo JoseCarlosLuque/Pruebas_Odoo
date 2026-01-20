@@ -1,0 +1,18 @@
+
+Para Ejecutar Odoo con el archivo de configuracion (desde la Raiz del proyecto) : 
+python3 odoo/odoo-bin -c odoo.conf
+
+Para crear de forma automática la estructura básica de un módulo:
+python odoo/odoo-bin scaffold biblioteca_proyecto custom_addons
+
+Crear entorno virtual: 
+python -m venv venv    
+
+Para isntalar con una versión en específico de Python: 
+py -3.12 -m venv .venv
+
+Activar entorno: 
+.\venv\Scripts\Activate.ps1
+
+Instalar dependencias:
+pip install -r odoo/requirements.txt
