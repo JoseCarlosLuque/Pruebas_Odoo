@@ -1,13 +1,15 @@
 {
     'name': "biblioteca_proyecto",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Proyecto Biblioteca en Odoo para aprender desarrollo de módulos",
 
     'description': """
-Long description of module's purpose
+    Módulo de gestión de una biblioteca que permite administrar libros, autores y préstamos. Incluye funcionalidades para registrar nuevos libros, gestionar su estado (disponible, prestado, dañado, perdido) y almacenar información relevante como ISBN, fecha de publicación y número de páginas.
+
+    Estoy siguiendo el curso de Odoo Next y esto es parte de proyecto final para practicar el desarrollo. 
     """,
 
-    'author': "My Company",
+    'author': "Biblioteca Proyecto",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -24,10 +26,12 @@ Long description of module's purpose
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/menu_view.xml',
+        'security/ir.model.access.csv',
+        'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
     ],
 }
 

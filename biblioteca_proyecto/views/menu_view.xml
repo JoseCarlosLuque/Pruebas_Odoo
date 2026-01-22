@@ -1,0 +1,64 @@
+<odoo>
+    <record id="view_biblioteca_libro_tree" model="ir.ui.view">
+        <field name="name">biblioteca.libro.list</field>
+        <field name="model">biblioteca_proyecto.libro</field>
+        <field name="arch" type="xml">
+            <list string="Libros">
+                <field name="name"/>
+                <field name="autor"/>
+                <field name="isbn"/>
+                <field name="state" widget="badge" 
+                       decoration-success="state == 'disponible'" 
+                       decoration-warning="state == 'prestado'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_biblioteca_libro_form" model="ir.ui.view">
+        <field name="name">biblioteca.libro.form</field>
+        <field name="model">biblioteca_proyecto.libro</field>  
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <header>
+                    <button name="action_prestar" string="Prestar Libro" 
+                            type="object" class="oe_highlight" 
+                            invisible="state != 'disponible'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="autor"/>
+                        </group>
+                        <group>
+                            <field name="isbn"/>
+                            <field name="fecha_publicacion"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_biblioteca_libro" model="ir.actions.act_window">
+        <field name="name">Libros</field>
+        <field name="res_model">biblioteca_proyecto.libro</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea tu primer libro en la biblioteca
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_biblioteca_root" 
+              name="Biblioteca" 
+              web_icon="base,static/description/icon.png"/>
+
+    <menuitem id="menu_biblioteca_libros" 
+              name="Gestión de Libros" 
+              parent="menu_biblioteca_root" 
+              action="action_biblioteca_libro" 
+              sequence="10"/>
+</odoo>

@@ -16,3 +16,12 @@ Activar entorno:
 
 Instalar dependencias:
 pip install -r odoo/requirements.txt
+
+Arrancar Odoo por primera vez:
+python odoo/odoo-bin -c odoo.conf -d biblioteca_db -i base 
+
+Para las demás:
+python odoo/odoo-bin -c odoo.conf
+
+Direccion servidor web desarrollo:
+http://localhost:8069               NOTA: Contraseña "admin" usuario "admin".

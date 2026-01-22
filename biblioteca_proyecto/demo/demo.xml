@@ -1,30 +1,59 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="biblioteca_proyecto.biblioteca_proyecto">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+        <record id="libro_demo_1" model="biblioteca_proyecto.libro">
+            <field name="name">Cien años de soledad</field>
+            <field name="autor">Gabriel García Márquez</field>
+            <field name="isbn">978-0307474728</field>
+            <field name="fecha_publicacion">1967-05-30</field>
+            <field name="state">disponible</field>
+        </record>
 
-          <record id="object1" model="biblioteca_proyecto.biblioteca_proyecto">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+        <record id="libro_demo_2" model="biblioteca_proyecto.libro">
+            <field name="name">El resplandor</field>
+            <field name="autor">Stephen King</field>
+            <field name="isbn">978-8497592437</field>
+            <field name="fecha_publicacion">1977-01-28</field>
+            <field name="state">disponible</field>
+        </record>
 
-          <record id="object2" model="biblioteca_proyecto.biblioteca_proyecto">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+        <record id="libro_demo_3" model="biblioteca_proyecto.libro">
+            <field name="name">Don Quijote de la Mancha</field>
+            <field name="autor">Miguel de Cervantes</field>
+            <field name="isbn">978-8424116281</field>
+            <field name="fecha_publicacion">1605-01-16</field>
+            <field name="state">prestado</field>
+        </record>
 
-          <record id="object3" model="biblioteca_proyecto.biblioteca_proyecto">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+        <record id="libro_demo_4" model="biblioteca_proyecto.libro">
+            <field name="name">1984</field>
+            <field name="autor">George Orwell</field>
+            <field name="isbn">978-8423351619</field>
+            <field name="fecha_publicacion">1949-06-08</field>
+            <field name="state">disponible</field>
+        </record>
 
-          <record id="object4" model="biblioteca_proyecto.biblioteca_proyecto">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
+        <record id="libro_demo_5" model="biblioteca_proyecto.libro">
+            <field name="name">El código Da Vinci</field>
+            <field name="autor">Dan Brown</field>
+            <field name="isbn">978-8408047964</field>
+            <field name="fecha_publicacion">2003-03-18</field>
+            <field name="state">disponible</field>
+        </record>
+
+        <record id="libro_demo_6" model="biblioteca_proyecto.libro">
+            <field name="name">Crónica de una muerte anunciada</field>
+            <field name="autor">Gabriel García Márquez</field>
+            <field name="isbn">978-8420471259</field>
+            <field name="fecha_publicacion">1981-01-01</field>
+            <field name="state">disponible</field>
+        </record>
+
+        <record id="libro_demo_7" model="biblioteca_proyecto.libro">
+            <field name="name">El Principito</field>
+            <field name="autor">Antoine de Saint-Exupéry</field>
+            <field name="isbn">978-8478887194</field>
+            <field name="fecha_publicacion">1943-04-06</field>
+            <field name="state">perdido</field>
+        </record>
     </data>
 </odoo>
