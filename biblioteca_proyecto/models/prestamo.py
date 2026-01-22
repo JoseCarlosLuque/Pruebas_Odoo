@@ -13,13 +13,17 @@ class BibliotecaPrestamo(models.Model):
         ('proceso', 'En curso'),
         ('devuelto', 'Devuelto')
     ], default='borrador')
+    
+    fecha_prestamo = fields.Date(string='Fecha de Préstamo', default=fields.Date.context_today, required=True)
 
     fecha_devolucion_prevista = fields.Date(
         string='Fecha Prevista de Devolución', 
         required=True,
         default=lambda self: fields.Date.add(fields.Date.today(), days=14) # Por defecto 2 semanas
     )
+    
     fecha_devolucion_real = fields.Date(string='Fecha Real de Devolución')
+    
     fuera_de_plazo = fields.Boolean(
         string='Fuera de Plazo', 
         compute='_compute_es_tarde', 

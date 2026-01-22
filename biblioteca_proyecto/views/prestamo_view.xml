@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_biblioteca_prestamo_list" model="ir.ui.view">
+        <field name="name">biblioteca.prestamo.list</field>
+        <field name="model">biblioteca_proyecto.prestamo</field>
+        <field name="arch" type="xml">
+            <list string="Préstamos" decoration-danger="fuera_de_plazo == True" decoration-info="fuera_de_plazo == False" decoration-muted="state == 'devuelto'">
+                <field name="usuario_id"/>
+                <field name="libro_id"/>
+                <field name="fecha_prestamo"/>
+                <field name="fecha_devolucion_prevista"/>
+                <field name="fecha_devolucion_real"/>
+                <field name="state" 
+                    widget="badge" 
+                    decoration-success="state == 'proceso'" 
+                    decoration-warning="state == 'devuelto'" 
+                    decoration-info="state == 'borrador'"/>
+                <field name="fuera_de_plazo" 
+                    widget="badge" 
+                    decoration-danger="fuera_de_plazo == True" 
+                    decoration-success="fuera_de_plazo == False"
+                    string="¿Retrasado?"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_biblioteca_prestamo_form" model="ir.ui.view">
+        <field name="name">biblioteca.prestamo.form</field>
+        <field name="model">biblioteca_proyecto.prestamo</field>
+        <field name="arch" type="xml">
+            <form string="Préstamo">
+                <header>
+                    <button name="action_confirmar_prestamo" 
+            string="Validar Préstamo" 
+            type="object" 
+            class="oe_highlight" 
+            invisible="state != 'borrador'"/>
+                    <button name="action_devolucion" 
+            string="Registrar Devolución" 
+            type="object" 
+            class="oe_highlight" 
+            invisible="state != 'proceso'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="borrador,proceso,devuelto"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Datos del Préstamo">
+                            <field name="usuario_id"/>
+                            <field name="libro_id"/>
+                            <field name="fecha_prestamo"/>
+                        </group>
+                        <group string="Detalles de Devolución">
+                            <field name="fecha_devolucion_prevista"/>
+                            <field name="fecha_devolucion_real"/>
+                            <field name="fuera_de_plazo"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_biblioteca_prestamo" model="ir.actions.act_window">
+        <field name="name">Préstamos</field>
+        <field name="res_model">biblioteca_proyecto.prestamo</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Gestiona los préstamos de libros en la biblioteca
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_biblioteca_prestamo" 
+          name="Préstamos" 
+          parent="menu_biblioteca_root" 
+          action="action_biblioteca_prestamo" 
+          sequence="30"/>
+</odoo>
