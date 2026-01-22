@@ -1,0 +1,60 @@
+<odoo>
+    <data noupdate="1"> 
+    
+        <record id="demo_usuario_1" model="biblioteca_proyecto.usuario">
+            <field name="name">Alejandro Magno</field>
+            <field name="dni">12345678A</field>
+            <field name="email">alejandro.m@ejemplo.com</field>
+            <field name="telefono">600111222</field>
+            <field name="fecha_registro" eval="datetime.now().strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_2" model="biblioteca_proyecto.usuario">
+            <field name="name">Beatriz Galindo</field>
+            <field name="dni">87654321B</field>
+            <field name="email">b.galindo@biblioteca.es</field>
+            <field name="telefono">655444333</field>
+            <field name="fecha_registro" eval="(datetime.now() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_3" model="biblioteca_proyecto.usuario">
+            <field name="name">Clara Campoamor</field>
+            <field name="dni">11223344C</field>
+            <field name="email">clara.c@derechos.org</field>
+            <field name="telefono">677888999</field>
+            <field name="fecha_registro" eval="(datetime.now() - relativedelta(years=1)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_4" model="biblioteca_proyecto.usuario">
+            <field name="name">Leonardo Da Vinci</field>
+            <field name="dni">00000001L</field>
+            <field name="email">leo.vinci@renacimiento.it</field>
+            <field name="telefono">611223344</field>
+            <field name="fecha_registro" eval="(datetime.now() - relativedelta(years=5)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_5" model="biblioteca_proyecto.usuario">
+            <field name="name">Marie Curie</field>
+            <field name="dni">99887766M</field>
+            <field name="email">m.curie@radio.fr</field>
+            <field name="telefono">622334455</field>
+            <field name="fecha_registro" eval="(datetime.now() - relativedelta(days=15)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_6" model="biblioteca_proyecto.usuario">
+            <field name="name">Juan Ramón Jiménez</field>
+            <field name="dni">55443322J</field>
+            <field name="email">jr.jimenez@poesia.es</field>
+            <field name="telefono">633445566</field>
+            <field name="fecha_registro" eval="(datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_usuario_7" model="biblioteca_proyecto.usuario">
+            <field name="name">Ada Lovelace</field>
+            <field name="dni">X1234567L</field>
+            <field name="email">ada.logic@computing.uk</field>
+            <field name="telefono">644556677</field>
+            <field name="fecha_registro" eval="datetime.now().strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>
