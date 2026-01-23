@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_biblioteca_proyecto_libro,biblioteca_proyecto.libro,model_biblioteca_proyecto_libro,base.group_user,1,1,1,1
-
+access_biblioteca_proyecto_usuario,biblioteca_proyecto.usuario,model_biblioteca_proyecto_usuario,base.group_user,1,1,1,1
+acces_biblioteca_proyecto_prestamo,biblioteca_proyecto.prestamo,model_biblioteca_proyecto_prestamo,base.group_user,1,1,1,1

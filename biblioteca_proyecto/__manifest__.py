@@ -6,7 +6,7 @@
     'description': """
     Módulo de gestión de una biblioteca que permite administrar libros, autores y préstamos. Incluye funcionalidades para registrar nuevos libros, gestionar su estado (disponible, prestado, dañado, perdido) y almacenar información relevante como ISBN, fecha de publicación y número de páginas.
 
-    Estoy siguiendo el curso de Odoo Next y esto es parte de proyecto final para practicar el desarrollo. 
+    Estoy siguiendo el curso de Odoo Next y esto es parte del proyecto final para practicar el desarrollo. 
     """,
 
     'author': "Biblioteca Proyecto",
@@ -23,15 +23,20 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views/views.xml',
+        'data/mail_template_data.xml',
+        'data/ir_cron_data.xml',
         'views/templates.xml',
         'views/menu_view.xml',
+        'views/usuario_view.xml',
+        'views/prestamo_view.xml',
+        'demo/demo_usuarios.xml',
+        'demo/demo.xml', 
         'security/ir.model.access.csv',
-        'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
+        'demo/demo.xml',   
     ],
 }
 

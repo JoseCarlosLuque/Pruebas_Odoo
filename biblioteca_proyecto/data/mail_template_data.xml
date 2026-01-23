@@ -1,0 +1,15 @@
+<record id="email_template_prestamo_vencido" model="mail.template">
+    <field name="name">Préstamo: Notificación Vencimiento</field>
+    <field name="model_id" ref="model_biblioteca_proyecto_prestamo"/>
+    <field name="subject">Retraso en devolución: {{ object.libro_id.name }}</field>
+    <field name="email_to">{{ object.usuario_id.email }}</field>
+    <field name="body_html" type="html">
+        <div style="font-family: Arial; font-size: 14px;">
+            <p>Estimado/a <t t-out="object.usuario_id.name"/>,</p>
+            <p>Le recordamos que el libro <strong><t t-out="object.libro_id.name"/></strong> 
+            debería haber sido devuelto el <t t-out="object.fecha_devolucion_prevista"/>.</p>
+            <p>Por favor, devuélvalo a la brevedad posible para evitar inconvenientes.</p>
+            <p>Gracias por su atención.</p>
+        </div>
+    </field>
+</record>
