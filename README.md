@@ -35,7 +35,7 @@ Este proyecto cubre los pilares fundamentales del desarrollo en Odoo:
 
 ## 📁 Estructura del Proyecto
 
----
+```
 custom_addons/
 └── biblioteca_proyecto/
     ├── __init__.py
@@ -59,6 +59,7 @@ custom_addons/
     │   ├── usuario_view.xml      # Vistas de socios y Smart Buttons
     │   └── prestamo_view.xml     # Vistas de préstamos y decoraciones
     └── README.md
+```
 ---
 
 ## 🚀 Instalación y Configuración
