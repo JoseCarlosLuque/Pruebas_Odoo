@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import date
+import logging
 
 class BibliotecaPrestamo(models.Model):
     _name = 'biblioteca_proyecto.prestamo'
@@ -39,6 +40,30 @@ class BibliotecaPrestamo(models.Model):
             else:
                 record.fuera_de_plazo = False
 
+    def run_check_retrasos_cron(self):
+        """Método que llamará el Cron Job"""
+        hoy = fields.Date.today()
+        # Buscamos préstamos en proceso que han vencido y no están marcados como retrasados
+        prestamos_vencidos = self.search([
+            ('state', '=', 'proceso'),
+            ('fecha_devolucion_prevista', '<', hoy),
+            ('fuera_de_plazo', '=', False)
+        ])
+        
+        for prestamo in prestamos_vencidos:
+            # Al actualizar esto, el store=True se guardará en la DB
+            prestamo.fuera_de_plazo = True
+            
+            # 1. Registro en el log (para que veas que funciona)
+            _logger.info(f"Cron: Préstamo {prestamo.id} del usuario {prestamo.usuario_id.name} marcado como retrasado.")
+            
+            # 2. Envío de notificación (Chatter)
+            # Esto enviará un correo si el usuario es seguidor o tiene email configurado
+            prestamo.message_post(
+                body=f"⚠️ **Notificación Automática**: El plazo para devolver el libro '{prestamo.libro_id.name}' venció el {prestamo.fecha_devolucion_prevista}. Por favor, proceda a su devolución.",
+                subtype_xmlid="mail.mt_comment"
+            )
+
     def action_confirmar_prestamo(self):
         for record in self:
             if record.libro_id.state != 'disponible':
@@ -58,3 +83,6 @@ class BibliotecaPrestamo(models.Model):
             # Usamos la referencia socio_id.libro_id (tu Foreign Key)
             record.libro_id.state = 'disponible'
     
+    # Método dummy para evitar errores en vistas
+    def action_dummy(self):
+        return True

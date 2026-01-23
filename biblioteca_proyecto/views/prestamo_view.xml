@@ -15,11 +15,12 @@
                     decoration-success="state == 'proceso'" 
                     decoration-warning="state == 'devuelto'" 
                     decoration-info="state == 'borrador'"/>
-                <field name="fuera_de_plazo" 
-                    widget="badge" 
-                    decoration-danger="fuera_de_plazo == True" 
-                    decoration-success="fuera_de_plazo == False"
-                    string="¿Retrasado?"/>
+                
+                <field name="fuera_de_plazo" string="Retraso" 
+                    widget="boolean_button" 
+                    options="{'terminology': {'fp_true': '¡ATRASADO!', 'fp_false': 'A tiempo'}}"
+                    decoration-danger="fuera_de_plazo == True"
+                    invisible="fuera_de_plazo == False"/>
             </list>
         </field>
     </record>

@@ -24,6 +24,8 @@
     # always loaded
     'data': [
         'views/views.xml',
+        'data/mail_template_data.xml',
+        'data/ir_cron_data.xml',
         'views/templates.xml',
         'views/menu_view.xml',
         'views/usuario_view.xml',
