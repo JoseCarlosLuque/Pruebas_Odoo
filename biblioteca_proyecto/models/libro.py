@@ -7,7 +7,6 @@ class BibliotecaLibro(models.Model):
     _name = 'biblioteca_proyecto.libro'
     _description = 'Libro de la Biblioteca'
     
-    # Campo obligatorio (el nombre del registro)
     name = fields.Char(string='Título', required=True)
     
     # Campos de información básica
